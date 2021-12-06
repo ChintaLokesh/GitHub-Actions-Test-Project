@@ -2,38 +2,38 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Test Suite" duration-ms="7201" started-at="2021-12-06T06:29:39Z" finished-at="2021-12-06T06:29:46Z">
+  <suite name="Test Suite" duration-ms="8439" started-at="2021-12-06T06:38:34Z" finished-at="2021-12-06T06:38:42Z">
     <groups>
     </groups>
-    <test name="Sanity Test" duration-ms="7201" started-at="2021-12-06T06:29:39Z" finished-at="2021-12-06T06:29:46Z">
-      <class name="dockerdemo.GmailHomepage">
-        <test-method status="PASS" signature="configure()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="configure" is-config="true" duration-ms="2820" started-at="2021-12-06T06:29:39Z" finished-at="2021-12-06T06:29:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- configure -->
-        <test-method status="PASS" signature="gmailHomepageTest()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="gmailHomepageTest" duration-ms="3367" started-at="2021-12-06T06:29:42Z" finished-at="2021-12-06T06:29:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gmailHomepageTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="tearDown" is-config="true" duration-ms="655" started-at="2021-12-06T06:29:45Z" finished-at="2021-12-06T06:29:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- dockerdemo.GmailHomepage -->
+    <test name="Sanity Test" duration-ms="8439" started-at="2021-12-06T06:38:34Z" finished-at="2021-12-06T06:38:42Z">
       <class name="dockerdemo.AutoSuggestDropDownTest">
-        <test-method status="PASS" signature="configure()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="configure" is-config="true" duration-ms="1891" started-at="2021-12-06T06:29:39Z" finished-at="2021-12-06T06:29:41Z">
+        <test-method status="PASS" signature="configure()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="configure" is-config="true" duration-ms="3414" started-at="2021-12-06T06:38:34Z" finished-at="2021-12-06T06:38:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configure -->
-        <test-method status="PASS" signature="AutoSuggestDropDownValidationTest()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="AutoSuggestDropDownValidationTest" duration-ms="4557" started-at="2021-12-06T06:29:41Z" finished-at="2021-12-06T06:29:45Z">
+        <test-method status="PASS" signature="AutoSuggestDropDownValidationTest()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="AutoSuggestDropDownValidationTest" duration-ms="4295" started-at="2021-12-06T06:38:37Z" finished-at="2021-12-06T06:38:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AutoSuggestDropDownValidationTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="tearDown" is-config="true" duration-ms="737" started-at="2021-12-06T06:29:45Z" finished-at="2021-12-06T06:29:46Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:dockerdemo.AutoSuggestDropDownTest@566776ad]" name="tearDown" is-config="true" duration-ms="713" started-at="2021-12-06T06:38:42Z" finished-at="2021-12-06T06:38:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- dockerdemo.AutoSuggestDropDownTest -->
+      <class name="dockerdemo.GmailHomepage">
+        <test-method status="PASS" signature="configure()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="configure" is-config="true" duration-ms="1890" started-at="2021-12-06T06:38:34Z" finished-at="2021-12-06T06:38:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configure -->
+        <test-method status="PASS" signature="gmailHomepageTest()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="gmailHomepageTest" duration-ms="3532" started-at="2021-12-06T06:38:36Z" finished-at="2021-12-06T06:38:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gmailHomepageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:dockerdemo.GmailHomepage@6108b2d7]" name="tearDown" is-config="true" duration-ms="721" started-at="2021-12-06T06:38:39Z" finished-at="2021-12-06T06:38:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- dockerdemo.GmailHomepage -->
     </test> <!-- Sanity Test -->
   </suite> <!-- Test Suite -->
 </testng-results>
