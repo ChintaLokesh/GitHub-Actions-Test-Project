@@ -38,7 +38,7 @@ public class BaseClass {
 		 options.addArguments("--headless");
 		 driver = new ChromeDriver(options);
 		
-		driver= new EdgeDriver();
+		//driver= new EdgeDriver();
 		
 	}
 	
