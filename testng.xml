@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name ="Test Suite" parallel="classes">
+<test name="Sanity Test">
+<classes >
+<class name="dockerdemo.AutoSuggestDropDownTest"/>
+<class name="dockerdemo.GmailHomepage"/>
+</classes>
+</test>
+</suite>

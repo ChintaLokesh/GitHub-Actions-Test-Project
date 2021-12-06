@@ -1,0 +1,23 @@
+version: "3"
+services:
+  hub:
+    image: selenium/hub:3.14
+    ports:
+      - "4444:4444"
+  chrome:
+    image:  selenium/node-chrome:3.14
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+   
+  Execute:
+    image: chintalokesh/selenium-docker-demo123:1.0
+    depends_on:
+      - chrome
+    environment:
+      - HUB_HOST=hub
+    volumes:
+      - C:\Users\lokeech\.m2:/root/.m2
+      - C:\Users\lokeech\Desktop\proj Files\testng.xml:/usr/Automation/testng.xml
+      - ./target1:/usr/Automation/screenshots
