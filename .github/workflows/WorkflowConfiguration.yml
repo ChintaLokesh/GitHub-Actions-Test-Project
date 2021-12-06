@@ -29,3 +29,26 @@ jobs:
           ls -a
           mvn clean test
           ls -a
+  
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 
+      - name: second run
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Test with Maven
+        run: |
+          pwd
+          ls -a
+          mvn clean test
+          ls -a
+          git add screenshots
+          git config --global  user.email "my-bot@gmail.com"
+          git config --global  user.name  "mybot"
+          git commit -m " commit screenshots "
+          git push origin v1
+        
+        
+        
