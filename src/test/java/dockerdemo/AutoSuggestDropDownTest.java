@@ -23,7 +23,7 @@ public class AutoSuggestDropDownTest extends BaseClass {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");
 		LocalDateTime now = LocalDateTime.now();
-		ReUsableMethods.takeScreenshot(driver, "GoogleHomePage_"+dtf.format(now));
+		ReUsableMethods.takeScreenshot(driver, "GoogleHomePage1_"+dtf.format(now));
 		  
 		driver.findElement(By.name("q")).sendKeys("Artificial Intelligence");
 		now = LocalDateTime.now();
