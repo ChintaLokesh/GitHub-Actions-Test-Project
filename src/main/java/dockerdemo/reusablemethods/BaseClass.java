@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -29,7 +31,13 @@ public class BaseClass {
 		prop=new Properties();
 		prop.load(new FileInputStream(System.getProperty("user.dir")+"/config.properties"));
 		//driver= new RemoteWebDriver(new URL(prop.getProperty("REMOTE.URL")),caps);
-		WebDriverManager.edgedriver().setup();
+		WebDriverManager.chromedriver().setup();
+		 ChromeOptions options = new ChromeOptions();
+		 options.addArguments("--no-sandbox");
+		 options.addArguments("--disable-dev-shm-usage");
+		 options.addArguments("--headless");
+		 driver = new ChromeDriver(options);
+		
 		driver= new EdgeDriver();
 		
 	}
