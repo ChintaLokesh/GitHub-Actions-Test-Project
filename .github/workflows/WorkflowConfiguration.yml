@@ -12,7 +12,7 @@ jobs:
       - name: Build with maven
         run: |
           ls -a
-          mvn -B package --filee pom.xml
+          mvn -B package --file pom.xml
           ls -a
   
   test1:
