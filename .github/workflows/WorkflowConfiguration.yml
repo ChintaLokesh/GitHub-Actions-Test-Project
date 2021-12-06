@@ -44,12 +44,11 @@ jobs:
           ls -a
           mvn clean test
           ls -a
-          git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
           git add screenshots
           git config --global  user.email "my-bot@gmail.com"
           git config --global  user.name  "mybot"
           git commit -m " commit screenshots "
-          git push origin v1
+          git push
         
         
         
