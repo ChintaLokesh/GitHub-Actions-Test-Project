@@ -1,5 +1,8 @@
 package dockerdemo;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -11,6 +14,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,14 +28,17 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import dockerdemo.reusablemethods.ReUsableMethods;
 
 public class FirstTest {
-
-	@Test
-	public void login() throws InterruptedException, IOException
+	WebDriver driver;
+	@Test(retryAnalyzer  = dockerdemo.RetryAnalyser.class )
+	public void login() throws InterruptedException, IOException, AWTException
 	{
 		
 		File file=new File(System.getProperty("user.dir")+"//Screenshots");
@@ -46,19 +53,43 @@ public class FirstTest {
 		LocalDateTime now = LocalDateTime.now();
 		
 		 ChromeOptions options = new ChromeOptions();
-		 options.addArguments("--no-sandbox");
-		 options.addArguments("--disable-dev-shm-usage");
-		 options.addArguments("--headless");
+//		 options.addArguments("--no-sandbox");
+//		 options.addArguments("--disable-dev-shm-usage");
+//		 options.addArguments("--headless");
 		 
-		WebDriver driver = new ChromeDriver(options);
+		driver = new ChromeDriver(options);
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		
 		driver.manage().window().maximize();
+		WebElement wb9=driver.findElement(By.id("name"));
 
+
+		((JavascriptExecutor)driver).executeScript("arguments[0].value='lokesh';", wb9);
+		
+		WebElement wb10=driver.findElement(By.id("alertbtn"));
+		
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", wb10);
+		
+		
+		System.out.println(driver.switchTo().alert().getText());
+		
+		driver.switchTo().alert().accept();
 		
 		System.out.println(driver.findElements(By.xpath("//label[contains(@for,'radio')]")).size());
 		
 
+		((JavascriptExecutor)driver).executeScript("arguments[0].value='udaya'", wb9);
+		
+		WebElement wb11=driver.findElement(By.id("confirmbtn"));
+		
+		
+		
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", wb11);
+		
+		System.out.println(driver.switchTo().alert().getText());
+		
+		driver.switchTo().alert().dismiss();
+		
 		driver.findElements(By.xpath("//label[contains(@for,'radio')]//input"))
 		.stream().filter(ele -> ele.getAttribute("value").equalsIgnoreCase("radio2")).
 		forEach(element -> element.click());
@@ -211,8 +242,19 @@ public class FirstTest {
 		
 		driver.switchTo().defaultContent();
 		
-		driver.findElement(By.id("name")).sendKeys("lokesh");
-
+//		driver.findElement(By.id("name")).sendKeys("lokesh");
+//		act.moveToElement(wb7).build().perform();
+//		act.moveToElement(wb7.findElement(By.xpath(".//a[text()='Top']"))).click().build().perform();
+		
+		
+	
+		driver.quit();
+//		Assert.assertTrue(false);
+	}
+	
+	@AfterClass
+	public void tearDown()
+	{
 		driver.quit();
 	}
 

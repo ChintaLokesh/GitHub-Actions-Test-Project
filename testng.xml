@@ -5,6 +5,7 @@
 <class name="dockerdemo.AutoSuggestDropDownTest"/>
 <class name="dockerdemo.GmailHomepage"/>
 <class name="dockerdemo.FirstTest"/>
+<class name="dockerdemo.RestAPITesting"/>
 </classes>
 </test>
 </suite>
