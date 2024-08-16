@@ -41,12 +41,12 @@ public class FirstTest {
 	public void login() throws InterruptedException, IOException, AWTException
 	{
 		
-		File file=new File(System.getProperty("user.dir")+"//Screenshots");
+		File file=new File(System.getProperty("user.dir")+"\\screenshots");
 		if( file.exists())
 		{
 			for( File f:file.listFiles())
 			{
-				System.out.println("File is deleted :"+f.delete());
+				System.out.println(f.getAbsolutePath()+" File is deleted :"+f.delete());
 			}
 		}
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd_MM_YYYY_HH_mm_ss");
@@ -115,7 +115,7 @@ public class FirstTest {
 		
 		File f=new File(System.getProperty("user.dir")+"//Screenshots");
 		boolean status=f.createNewFile();
-		System.out.println("status is:"+status);
+		System.out.println("file creation status is:"+status);
 		
 		
 
