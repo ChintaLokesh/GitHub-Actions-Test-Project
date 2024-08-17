@@ -111,7 +111,59 @@ public class RestAPITesting {
 		
 	}
 	
+	
 	@Test(priority = 2)
+	public void testPUTAPI()
+	{
+		RestAssured.baseURI="https://api.restful-api.dev/";
+		RequestSpecification spec=RestAssured.given();
+		spec.contentType("application/json");
+		
+		String body="{\r\n"
+				+ "   \"name\": \"Apple MacBook Pro 16\",\r\n"
+				+ "   \"data\": {\r\n"
+				+ "      \"year\": 2024,\r\n"
+				+ "      \"price\": 2049.99,\r\n"
+				+ "      \"CPU model\": \"Intel Core i9\",\r\n"
+				+ "      \"Hard disk size\": \"1 TB\",\r\n"
+				+ "      \"color\": \"silver\"\r\n"
+				+ "   }\r\n"
+				+ "}";
+		spec.body(body);
+		spec.log().all();
+		System.out.println("INPUT ID :"+id);
+		Response res=spec.put("objects/"+id);
+		Assert.assertEquals(res.getStatusCode(), 200);
+		System.out.println("PUT API Response code: "+res.getStatusCode());
+		System.out.println("PUT API Response: "+res.getBody().asString());
+		
+		
+	}
+	
+	@Test(priority = 3)
+	public void testPATCHAPI()
+	{
+//		id="ff808181915b67d301915e69448e03bc";
+		RestAssured.baseURI="https://api.restful-api.dev/";
+		RequestSpecification spec=RestAssured.given();
+		spec.contentType("application/json");
+		
+		String body="{\r\n"
+				+ "   \"name\": \"Apple MacBook Pro 16 (Updated Name)\"\r\n"
+				+ "}";
+		spec.body(body);
+		spec.log().all();
+		System.out.println("INPUT ID :"+id);
+		Response res=spec.patch("objects/"+id);
+		Assert.assertEquals(res.getStatusCode(), 200);
+		System.out.println("PATCH API Response code: "+res.getStatusCode());
+		System.out.println("PATCH API Response: "+res.getBody().asString());
+		
+		
+	}
+	
+	
+	@Test(priority = 4)
 	public void testDeleteAPI()
 	{
 		Response res=null;
